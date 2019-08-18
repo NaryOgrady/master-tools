@@ -2,12 +2,20 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { AureliaPlugin } = require('aurelia-webpack-plugin');
 const { ProvidePlugin } = require('webpack');
+const autoprefixer = require('autoprefixer')
 
 const title = 'Master Tools';
 const outDir = path.resolve(__dirname, 'dist');
 const srcDir = path.resolve(__dirname, 'src');
-const nodeModulesDir = path.resolve(__dirname, 'node_modules');
 const baseUrl = '/';
+
+const cssRules = [
+  { loader: 'css-loader' },
+  {
+    loader: 'postcss-loader',
+    options: { plugins: () => [autoprefixer({ browserList: ['defaults'] })] }
+  }
+];
 
 module.exports = function webpackConfig(server) {
   return {
@@ -18,7 +26,7 @@ module.exports = function webpackConfig(server) {
     },
     entry: {
       app: ['aurelia-bootstrapper'],
-      vendor: ['bluebird']
+      vendor: ['bluebird', 'materialize-css']
     },
     output: {
       path: outDir,
@@ -33,13 +41,19 @@ module.exports = function webpackConfig(server) {
     },
     module: {
       rules: [
-        { test: /\.html$/i, loader: 'html-loader' }
+        { test: /\.html$/i, loader: 'html-loader' },
+        {
+          test: /\.css$/i,
+          issuer: [{ not: [{ test: /\.html$/i }] }],
+          use: ['style-loader', ...cssRules]
+        }
       ]
     },
     plugins: [
       new AureliaPlugin(),
       new ProvidePlugin({
-        Promise: 'bluebird'
+        Promise: 'bluebird',
+        $: 'jquery'
       }),
       new HtmlWebpackPlugin({
         template: 'index.ejs',

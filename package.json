@@ -1,0 +1,33 @@
+{
+  "name": "master-tools",
+  "version": "0.1.0",
+  "description": "A set of tools for dungeon masters.",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "aurelia",
+    "javascript",
+    "dnd"
+  ],
+  "author": "NaryOgrady",
+  "license": "MIT",
+  "devDependencies": {
+    "aurelia-bootstrapper": "^2.3.3",
+    "aurelia-webpack-plugin": "^4.0.0",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.8.0"
+  },
+  "dependencies": {
+    "aurelia-pal": "^1.8.2",
+    "babel-polyfill": "^6.26.0",
+    "bluebird": "^3.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "lodash": "^4.17.15"
+  }
+}

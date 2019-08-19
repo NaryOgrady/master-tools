@@ -41,11 +41,18 @@ module.exports = function webpackConfig(server) {
     },
     module: {
       rules: [
-        { test: /\.html$/i, loader: 'html-loader' },
+        {
+          test: /\.html$/i,
+          loader: 'html-loader'
+        },
         {
           test: /\.css$/i,
           issuer: [{ not: [{ test: /\.html$/i }] }],
           use: ['style-loader', ...cssRules]
+        },
+        {
+          test: /\.scss$/i,
+          use: ['style-loader', ...cssRules, 'sass-loader']
         }
       ]
     },

@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { AureliaPlugin } = require('aurelia-webpack-plugin');
 const { ProvidePlugin } = require('webpack');
-const autoprefixer = require('autoprefixer')
+const autoprefixer = require('autoprefixer');
 
 const title = 'Master Tools';
 const outDir = path.resolve(__dirname, 'dist');

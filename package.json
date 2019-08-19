@@ -4,7 +4,7 @@
   "description": "A set of tools for dungeon masters.",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx webpack-dev-server -d --inline --env.server"
   },
   "keywords": [
     "aurelia",

@@ -5,7 +5,7 @@ export class App {
     config.title = 'Master Tools';
     config.map([
       {
-        route: [''], name: 'tools', moduleId: PLATFORM.moduleName('./tools'), nav: true, title: 'Welcome'
+        route: [''], name: 'home', moduleId: PLATFORM.moduleName('./home/home'), nav: true, title: 'Welcome'
       }
     ]);
 

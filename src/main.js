@@ -1,5 +1,4 @@
 import 'babel-polyfill';
-import 'materialize-css/dist/css/materialize.css';
 import '../styles/styles.scss';
 import * as Bluebird from 'bluebird';
 import { PLATFORM } from 'aurelia-pal';

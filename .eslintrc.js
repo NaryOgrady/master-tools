@@ -17,6 +17,7 @@ module.exports = {
   rules: {
     'comma-dangle': ['error', 'never'],
     'no-param-reassign': ['warn', { 'props': false }],
-    'import/prefer-default-export': 'off'
+    'import/prefer-default-export': 'off',
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["package-scripts.js"]}]
   }
 };

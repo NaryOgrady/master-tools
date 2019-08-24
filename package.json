@@ -4,7 +4,8 @@
   "description": "A set of tools for dungeon masters.",
   "private": true,
   "scripts": {
-    "start": "npx webpack-dev-server -d --inline --env.server"
+    "start": "npx webpack-dev-server -d --inline --env.server",
+    "test": "npx nps test"
   },
   "keywords": [
     "aurelia",
@@ -14,6 +15,9 @@
   "author": "NaryOgrady",
   "license": "MIT",
   "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
     "aurelia-bootstrapper": "^2.3.3",
     "aurelia-webpack-plugin": "^4.0.0",
     "autoprefixer": "^9.6.1",
@@ -24,7 +28,6 @@
     "jest": "^24.9.0",
     "node-sass": "^4.12.0",
     "npm-utils": "^2.0.3",
-    "nps": "^5.9.5",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^7.2.0",
     "style-loader": "^1.0.0",

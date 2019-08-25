@@ -1,4 +1,5 @@
 import { App } from 'app';
+import { appConfig } from 'resources/config';
 
 class RouterStub {
   constructor() {
@@ -29,6 +30,10 @@ describe('the App module', () => {
   });
 
   it('has the correct title', () => {
-    expect(mockedApp.router.title).toEqual('Master Tools');
+    expect(mockedApp.router.title).toEqual(appConfig.title);
+  });
+
+  it('router has the correct routes', () => {
+    expect(mockedApp.router.routes).toEqual(appConfig.routes);
   });
 });

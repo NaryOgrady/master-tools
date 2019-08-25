@@ -7,6 +7,7 @@ const autoprefixer = require('autoprefixer');
 const title = 'Master Tools';
 const outDir = path.resolve(__dirname, 'dist');
 const srcDir = path.resolve(__dirname, 'src');
+const nodeModulesDir = path.resolve(__dirname, 'node_modules');
 const baseUrl = '/';
 
 const cssRules = [
@@ -48,6 +49,11 @@ module.exports = function webpackConfig(server) {
         {
           test: /\.scss$/i,
           use: ['style-loader', ...cssRules, 'sass-loader']
+        },
+        {
+          test: /\.js$/i,
+          loader: 'babel-loader',
+          exclude: nodeModulesDir
         }
       ]
     },

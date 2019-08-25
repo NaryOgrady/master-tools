@@ -11,14 +11,20 @@ module.exports = {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
   },
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module',
+    ecmaFeatures: {
+      legacyDecorators: true
+    }
   },
   rules: {
     'comma-dangle': ['error', 'never'],
     'no-param-reassign': ['warn', { 'props': false }],
     'import/prefer-default-export': 'off',
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["package-scripts.js"]}]
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["package-scripts.js"]}],
+    'import/no-unresolved': 'off',
+    'arrow-parens': 'off'
   }
 };

@@ -1,6 +1,5 @@
 import 'babel-polyfill';
 import '../styles/styles.scss';
-import 'materialize-css/dist/js/materialize';
 import * as Bluebird from 'bluebird';
 import { PLATFORM } from 'aurelia-pal';
 
@@ -15,3 +14,4 @@ export async function configure(aurelia) {
   await aurelia.start();
   await aurelia.setRoot(PLATFORM.moduleName('app'));
 }
+  

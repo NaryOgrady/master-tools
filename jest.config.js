@@ -11,7 +11,7 @@ module.exports = {
   transform: {
     '^.+\\.jsx?$': 'babel-jest'
   },
-  testRegex: '\\.spec\\.js',
+  testRegex: '\\.spec\\.(ts|js)x?$',
   setupFiles: [
     '<rootDir>/test/jest-pretest.js'
   ],
